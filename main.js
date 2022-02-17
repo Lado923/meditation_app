@@ -58,6 +58,7 @@ song.ontimeupdate = () => {
 
     let progress = outlineLength - (currentTime / fakeDuration) * outlineLength;
     outline.style.strokeDashoffset = progress;
+    outline.style.translation = "all 1s ease";
 
     correctionTime = (time) => time < 10 ? `0${time}` : time;
     timeDisplay.textContent = `${correctionTime(minutes)}:${correctionTime(seconds)}`;
