@@ -7,7 +7,18 @@ const app = () => {
     const timeDisplay = document.querySelector('.time-display');
     const outlineLength = outline.getTotalLength();
     const timeSelect = document.querySelectorAll('.time-select button');
-
+   
+    
+    sounds.forEach(option => {
+        option.addEventListener('click', function(){
+            song.src = this.getAttribute('data-sound');
+            video.src = this.getAttribute('data-video');
+            playChecker(song);
+            console.log(video.src)
+        })
+    })
+   
+   
     let fakeDuration = 600;
 
     outline.style.strokeDasharray = outlineLength;
